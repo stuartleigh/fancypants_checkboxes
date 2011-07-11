@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="fancypants_checkbox.js"></script>
+	<style type="text/css">
+		.fancy_checkbox {width: 10px; height: 10px; background: #234fce; display: inline-block;}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><input type="checkbox" id="1" /></li>
+		<li><input type="checkbox" id="2" /></li>
+		<li><input type="checkbox" id="3" /></li>
+		<li><input type="checkbox" id="4" /></li>
+		<li><input type="checkbox" id="5" /></li>
+	</ul>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('input[type="checkbox"]').fancypants_checkbox();
+			
+			$('input[type="checkbox"]').click(function(){
+				console.log('triggered click');
+				console.log($(this).attr('id'))
+			});
+		});
+	</script>
+</body>
+</html>

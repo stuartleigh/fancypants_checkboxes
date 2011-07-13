@@ -70,27 +70,9 @@
 	
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$('input[type="checkbox"]').fancypants_checkbox();
-			$('input[type="checkbox"]').click(function(){
+			$('input[type="checkbox"]').fancypants_checkbox().click(function(){
 				console.log('triggered click');
 				console.log($(this).attr('id'))
-			});
-			$('.fp_cb_holder').toggle(function(){
-                $toggle = $(this).find('.fp_cb_toggle')
-			     $toggle.animate({
-			         left: $(this).width() - $toggle.width() + 7
-			     }, 100);
-			     $toggle.next().animate({backgroundColor: '#a8ff00'}, 100);
-			     $toggle.parent().find('.fp_cb_no').fadeOut(100)
-			     $toggle.parent().find('.fp_cb_yes').fadeIn(100)
-			}, function(){
-			     $toggle = $(this).find('.fp_cb_toggle')
-			     $toggle.animate({
-			         left: 6
-			     }, 100);
-			     $toggle.next().animate({backgroundColor: '#ed1c24'}, 100)
-			     $toggle.parent().find('.fp_cb_yes').hide()
-			     $toggle.parent().find('.fp_cb_no').fadeIn(100)
 			});
 		});
 	</script>

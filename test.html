@@ -12,7 +12,7 @@
 		
 		/* Fancy Pants Styles */
 		.fp_cb_holder {
-			float:right;
+			display: inline-block;
 			position: relative; 
 			padding: 7px; 
 			-webkit-border-radius: 3px; 
@@ -42,12 +42,14 @@
 			-webkit-box-shadow: inset 0 1px #000, 0 1px rgba(255,255,255,0.2);
 			-moz-box-shadow: inset 0 1px #000, 0 1px rgba(255,255,255,0.2);
 		}
-		.fp_cb_slider {width: 144px;}
-		/*.fp_cb_slider span {display: block;padding: 3px;}
+		.fp_cb_slider {width: 72px;}
+		.fp_cb_slider span {display: block;padding: 3px 10px; line-height: 10px;}
 		.fp_cb_yes {
             
         }
-		.fp_cb_no {}*/		
+		.fp_cb_no {
+			text-align: right
+		}		
 	</style>
 </head>
 <body>
@@ -63,8 +65,8 @@
 		<img src="toggle.png" alt="fancypants checkbox toggle" class="fp_cb_toggle" />
 		<div class="fp_cb_inner">
 			<div class="fp_cb_slider">
-				<!--<span class="fp_cb_yes">yep</span>
-				<span class="fp_cb_no">nope</span>-->
+				<span class="fp_cb_yes" style="display:none;">yep</span>
+				<span class="fp_cb_no">nope</span>
 			</div>
 		</div>
 	</div>
@@ -82,13 +84,17 @@
 			     $toggle.animate({
 			         left: $(this).width() - $toggle.width() + 7
 			     }, 100);
-			     $toggle.next().animate({backgroundColor: '#a8ff00'}, 100)
+			     $toggle.next().animate({backgroundColor: '#a8ff00'}, 100);
+			     $toggle.parent().find('.fp_cb_no').fadeOut(100)
+			     $toggle.parent().find('.fp_cb_yes').fadeIn(100)
 			}, function(){
 			     $toggle = $(this).find('.fp_cb_toggle')
 			     $toggle.animate({
 			         left: 6
 			     }, 100);
 			     $toggle.next().animate({backgroundColor: '#ed1c24'}, 100)
+			     $toggle.parent().find('.fp_cb_yes').hide()
+			     $toggle.parent().find('.fp_cb_no').fadeIn(100)
 			});
 		});
 	</script>

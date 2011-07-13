@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title></title>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.animate-colors-min.js"></script>
 	<script type="text/javascript" src="fancypants_checkbox.js"></script>
 	<style type="text/css">
 		body {background: url(black_linen_v2.png); padding: 200px;}
@@ -35,6 +36,7 @@
 			-webkit-border-radius: 3px; 
 			-moz-border-radius: 3px; 
 			border-radius: 3px;
+			background: #ed1c24;
 			background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, rgba(0,0,0, 0.1)),color-stop(1, rgba(255,255,255,0.1)));
 			background-image: -moz-linear-gradient(center bottom,rgba(0,0,0.0.1) 0%,rgba(255,255,255,0.1) 100%);
 			-webkit-box-shadow: inset 0 1px #000, 0 1px rgba(255,255,255,0.2);
@@ -78,13 +80,15 @@
 			$('.fp_cb_holder').toggle(function(){
                 $toggle = $(this).find('.fp_cb_toggle')
 			     $toggle.animate({
-			         left: $(this).width() - $toggle.width() + 6
+			         left: $(this).width() - $toggle.width() + 7
 			     }, 100);
+			     $toggle.next().animate({backgroundColor: '#a8ff00'}, 100)
 			}, function(){
 			     $toggle = $(this).find('.fp_cb_toggle')
 			     $toggle.animate({
 			         left: 6
 			     }, 100);
+			     $toggle.next().animate({backgroundColor: '#ed1c24'}, 100)
 			});
 		});
 	</script>
